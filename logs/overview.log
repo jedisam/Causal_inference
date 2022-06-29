@@ -1,0 +1,4 @@
+06-29-2022 00:42:51 : INFO : logger : Successfully Instantiated Outlier Class Object
+06-29-2022 00:43:15 : INFO : logger : Missing value of the dataset calculated
+06-29-2022 00:43:57 : INFO : logger : Number of duplicated fields calculated
+06-29-2022 00:49:04 : INFO : logger : Skewness calculated

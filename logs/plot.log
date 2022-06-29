@@ -1,8 +1,5 @@
-06-28-2022 23:52:49 : INFO : logger : Successfully Instantiated load_data Class Object
-06-29-2022 00:20:32 : INFO : logger : Successfully Instantiated load_data Class Object
 06-29-2022 00:20:32 : INFO : logger : Successfully Instantiated Preprocessing Class Object
 06-29-2022 00:22:55 : INFO : logger : Plotting a profile for the dataset: 
-06-29-2022 00:24:50 : INFO : logger : Successfully Instantiated load_data Class Object
 06-29-2022 00:24:50 : INFO : logger : Successfully Instantiated Preprocessing Class Object
 06-29-2022 00:42:51 : INFO : logger : Successfully Instantiated Outlier Class Object
 06-29-2022 00:43:15 : INFO : logger : Missing value of the dataset calculated
