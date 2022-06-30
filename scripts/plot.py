@@ -5,6 +5,7 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import plotly.graph_objects as go
 import seaborn as sns
 
 from logger import Logger
@@ -35,7 +36,6 @@ class Plot:
         profile.to_file(output_file=f"{title}.html")
         self.logger.info("Plotting a profile for the dataset: ")
         return profile
-        return
 
     def plot_hist(self, df: pd.DataFrame, column: str, color: str) -> None:
         """Plot the hist of the column.
@@ -53,6 +53,26 @@ class Plot:
         #     'Plotting a histogram')
         plt.show()
 
+    def plot_hist_subplot(self, df: pd.DataFrame, columns: list) -> None:
+        """Plot multiple displot for the columns.
+
+        Args:
+            df(pd.DataFrame): Dataframe to be plotted.
+            columns(list): list of columns to be plotted.
+        
+        Returns:
+            None
+        """
+
+        # plot the histogram of the columns
+        self.logger.info("Plotting multiple histogram")
+        sns.set()
+        fig, ax = plt.subplots(len(columns), figsize=(20, 15))
+        for i, col in enumerate(columns):
+            sns.distplot(df[col], ax=ax[i])
+            ax[i].set_title(col, size=20)
+        plt.show()
+
     def plot_count(self, df: pd.DataFrame, column: str) -> None:
         """Plot the count of the column.
 
@@ -60,11 +80,11 @@ class Plot:
             df(pd.DataFrame): Dataframe to be plotted.
             column(str): column to be plotted.
         """
+        sns.set()
         plt.figure(figsize=(12, 7))
-        # self.logger.info(
-        #     'Plotting a plot_count')
-        sns.countplot(df, hue=column)
-        plt.title(f"Distribution of {column}", size=20, fontweight="bold")
+        self.logger.info("Plotting a plot_count")
+        sns.countplot(data=df, x=column)
+        plt.title(f"Countplot of {column}", size=20, fontweight="bold")
         plt.show()
 
     def plot_bar(
@@ -93,7 +113,7 @@ class Plot:
         #     'Plotting a bar chart')
         plt.show()
 
-    def plot_heatmap(self, df: pd.DataFrame, title: str, cbar=False) -> None:
+    def plot_heatmap2(self, df: pd.DataFrame, title: str, cbar=False) -> None:
         """Plot Heat map of the dataset.
 
         Args:
@@ -116,6 +136,18 @@ class Plot:
         # self.logger.info(
         #     'Plotting a heatmap for the dataset: ')
         plt.show()
+
+    def plot_heatmap(self, df: pd.DataFrame, title: str, cbar=False) -> None:
+        """Plot Heat map of the dataset.
+
+        Args:
+            df(pd.DataFrame): Dataframe to be plotted.
+            title(str): title of chart.
+        """
+        # Increase the size of the heatmap.
+        plt.figure(figsize=(26, 12))
+        heatmap = sns.heatmap(df.corr(), vmin=-1, vmax=1, annot=True)
+        heatmap.set_title(title, fontdict={"fontsize": 8}, pad=12)
 
     def plot_box(self, df: pd.DataFrame, x_col: str, title: str) -> None:
         """Plot box chart of the column.
@@ -169,7 +201,7 @@ class Plot:
         #     'Plotting a scatter plot')
         plt.show()
 
-    def plot_pie(self, data, labels, title) -> None:
+    def plot_pie(self, data, labels, title="") -> None:
         """Plot pie chart of the data.
 
         Args:
@@ -177,13 +209,30 @@ class Plot:
             labels(list): labels of the data.
             colors(list): colors of the data.
         """
-        plt.figure(figsize=(12, 7))
-        colors = sns.color_palette("bright")
-        plt.pie(data, labels=labels, colors=colors, autopct="%.0f%%")
-        plt.title(title, size=20)
-        # self.logger.info(
-        #     'Plotting a pie chart')
-        plt.show()
+        # plt.figure(figsize=(12, 7))
+        # colors = sns.color_palette("bright")
+        # plt.pie(data, labels=labels, colors=colors, autopct="%.0f%%")
+        # plt.title(title, size=20)
+        # # self.logger.info(
+        # #     'Plotting a pie chart')
+        # plt.show()
+        sns.set()
+        fig = go.Figure(
+            data=[
+                go.Pie(
+                    labels=labels, values=data.value_counts(), textinfo="label+percent",
+                )
+            ]
+        )
+        fig.update_traces(
+            hoverinfo="label+percent",
+            textinfo="value",
+            textfont_size=20,
+            marker=dict(
+                colors=["darkorange", "gold"], line=dict(color="#000000", width=2)
+            ),
+        )
+        fig.show()
 
     # function to get the values in a plot
     def plot_hist_2d(
@@ -211,6 +260,43 @@ class Plot:
         # self.logger.info(
         #     'Plotting multiple histogram')
         plt.show()
+
+    def outliers_plot(self, data, cols) -> None:
+        """Plot outliers of the data.
+
+        Args:
+            data(pd.DataFrame): Dataframe to be plotted.
+        """
+        names = cols
+        # convert DataFrame to list
+        values = []
+        for column in data.iloc[:, 5:11].columns:
+            li = data[column].tolist()
+            values.append(li)
+        colors = [
+            "gold",
+            "mediumturquoise",
+            "darkorange",
+            "lightgreen",
+            "cyan",
+            "royalblue",
+        ]
+
+        fig = go.Figure()
+        for xd, yd, cls in zip(names, values, colors):
+            fig.add_trace(
+                go.Box(
+                    y=yd,
+                    name=xd,
+                    boxpoints="outliers",
+                    jitter=0.5,
+                    whiskerwidth=0.2,
+                    fillcolor=cls,
+                    marker_size=3,
+                    line_width=2,
+                )
+            )
+        fig.show()
 
     def get_value(self, figure):
         """Get values in a plot.

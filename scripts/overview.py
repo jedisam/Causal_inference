@@ -45,7 +45,7 @@ class Overview:
         # Calculate percentage of missing values
         self.logger.info("Missing value of the dataset calculated")
         print(
-            "The telecom dataset contains",
+            "The dataset contains",
             round(((totalMissing / totalCells) * 100), 2),
             "%",
             "missing values.",
