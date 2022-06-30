@@ -95,3 +95,18 @@
 06-30-2022 17:30:51 : INFO : logger : Plotting multiple histogram
 06-30-2022 17:30:56 : INFO : logger : Plotting multiple histogram
 06-30-2022 17:31:04 : INFO : logger : Plotting a plot_count
+06-30-2022 18:54:34 : INFO : logger : Number of duplicated fields calculated
+06-30-2022 18:54:44 : INFO : logger : Missing columns are: Index(['Unnamed: 32'], dtype='object')
+06-30-2022 18:54:49 : INFO : logger : Missing value of the dataset calculated
+06-30-2022 18:54:57 : INFO : logger : Dropping column: id
+06-30-2022 18:54:57 : INFO : logger : Dropped column: id
+06-30-2022 19:43:52 : INFO : logger : Successfully Instantiated Outlier Class Object
+06-30-2022 19:43:58 : INFO : logger : Missing value of the dataset calculated
+06-30-2022 19:44:02 : INFO : logger : Number of duplicated fields calculated
+06-30-2022 19:44:11 : INFO : logger : Skewness calculated
+06-30-2022 19:44:17 : INFO : logger : Dropping column: id
+06-30-2022 19:44:17 : INFO : logger : Dropped column: id
+06-30-2022 19:44:24 : INFO : logger : Plotting a plot_count
+06-30-2022 19:44:48 : INFO : logger : Plotting a plot_count
+06-30-2022 20:25:42 : INFO : logger : Successfully Instantiated Outlier Class Object
+06-30-2022 20:26:45 : INFO : logger : Missing value of the dataset calculated
