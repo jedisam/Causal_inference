@@ -5,6 +5,7 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import plotly.graph_objects as go
 import seaborn as sns
 
 from logger import Logger
@@ -79,6 +80,7 @@ class Plot:
             df(pd.DataFrame): Dataframe to be plotted.
             column(str): column to be plotted.
         """
+        sns.set()
         plt.figure(figsize=(12, 7))
         self.logger.info("Plotting a plot_count")
         sns.countplot(data=df, x=column)
@@ -199,7 +201,7 @@ class Plot:
         #     'Plotting a scatter plot')
         plt.show()
 
-    def plot_pie(self, data, labels, title) -> None:
+    def plot_pie(self, data, labels, title="") -> None:
         """Plot pie chart of the data.
 
         Args:
@@ -207,13 +209,30 @@ class Plot:
             labels(list): labels of the data.
             colors(list): colors of the data.
         """
-        plt.figure(figsize=(12, 7))
-        colors = sns.color_palette("bright")
-        plt.pie(data, labels=labels, colors=colors, autopct="%.0f%%")
-        plt.title(title, size=20)
-        # self.logger.info(
-        #     'Plotting a pie chart')
-        plt.show()
+        # plt.figure(figsize=(12, 7))
+        # colors = sns.color_palette("bright")
+        # plt.pie(data, labels=labels, colors=colors, autopct="%.0f%%")
+        # plt.title(title, size=20)
+        # # self.logger.info(
+        # #     'Plotting a pie chart')
+        # plt.show()
+        sns.set()
+        fig = go.Figure(
+            data=[
+                go.Pie(
+                    labels=labels, values=data.value_counts(), textinfo="label+percent",
+                )
+            ]
+        )
+        fig.update_traces(
+            hoverinfo="label+percent",
+            textinfo="value",
+            textfont_size=20,
+            marker=dict(
+                colors=["darkorange", "gold"], line=dict(color="#000000", width=2)
+            ),
+        )
+        fig.show()
 
     # function to get the values in a plot
     def plot_hist_2d(
@@ -241,6 +260,43 @@ class Plot:
         # self.logger.info(
         #     'Plotting multiple histogram')
         plt.show()
+
+    def outliers_plot(self, data, cols) -> None:
+        """Plot outliers of the data.
+
+        Args:
+            data(pd.DataFrame): Dataframe to be plotted.
+        """
+        names = cols
+        # convert DataFrame to list
+        values = []
+        for column in data.iloc[:, 5:11].columns:
+            li = data[column].tolist()
+            values.append(li)
+        colors = [
+            "gold",
+            "mediumturquoise",
+            "darkorange",
+            "lightgreen",
+            "cyan",
+            "royalblue",
+        ]
+
+        fig = go.Figure()
+        for xd, yd, cls in zip(names, values, colors):
+            fig.add_trace(
+                go.Box(
+                    y=yd,
+                    name=xd,
+                    boxpoints="outliers",
+                    jitter=0.5,
+                    whiskerwidth=0.2,
+                    fillcolor=cls,
+                    marker_size=3,
+                    line_width=2,
+                )
+            )
+        fig.show()
 
     def get_value(self, figure):
         """Get values in a plot.
