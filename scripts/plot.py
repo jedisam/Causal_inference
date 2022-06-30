@@ -35,7 +35,6 @@ class Plot:
         profile.to_file(output_file=f"{title}.html")
         self.logger.info("Plotting a profile for the dataset: ")
         return profile
-        return
 
     def plot_hist(self, df: pd.DataFrame, column: str, color: str) -> None:
         """Plot the hist of the column.
@@ -53,6 +52,26 @@ class Plot:
         #     'Plotting a histogram')
         plt.show()
 
+    def plot_hist_subplot(self, df: pd.DataFrame, columns: list) -> None:
+        """Plot multiple displot for the columns.
+
+        Args:
+            df(pd.DataFrame): Dataframe to be plotted.
+            columns(list): list of columns to be plotted.
+        
+        Returns:
+            None
+        """
+
+        # plot the histogram of the columns
+        self.logger.info("Plotting multiple histogram")
+        sns.set()
+        fig, ax = plt.subplots(len(columns), figsize=(20, 15))
+        for i, col in enumerate(columns):
+            sns.distplot(df[col], ax=ax[i])
+            ax[i].set_title(col, size=20)
+        plt.show()
+
     def plot_count(self, df: pd.DataFrame, column: str) -> None:
         """Plot the count of the column.
 
@@ -61,10 +80,9 @@ class Plot:
             column(str): column to be plotted.
         """
         plt.figure(figsize=(12, 7))
-        # self.logger.info(
-        #     'Plotting a plot_count')
-        sns.countplot(df, hue=column)
-        plt.title(f"Distribution of {column}", size=20, fontweight="bold")
+        self.logger.info("Plotting a plot_count")
+        sns.countplot(data=df, x=column)
+        plt.title(f"Countplot of {column}", size=20, fontweight="bold")
         plt.show()
 
     def plot_bar(
@@ -93,7 +111,7 @@ class Plot:
         #     'Plotting a bar chart')
         plt.show()
 
-    def plot_heatmap(self, df: pd.DataFrame, title: str, cbar=False) -> None:
+    def plot_heatmap2(self, df: pd.DataFrame, title: str, cbar=False) -> None:
         """Plot Heat map of the dataset.
 
         Args:
@@ -116,6 +134,18 @@ class Plot:
         # self.logger.info(
         #     'Plotting a heatmap for the dataset: ')
         plt.show()
+
+    def plot_heatmap(self, df: pd.DataFrame, title: str, cbar=False) -> None:
+        """Plot Heat map of the dataset.
+
+        Args:
+            df(pd.DataFrame): Dataframe to be plotted.
+            title(str): title of chart.
+        """
+        # Increase the size of the heatmap.
+        plt.figure(figsize=(26, 12))
+        heatmap = sns.heatmap(df.corr(), vmin=-1, vmax=1, annot=True)
+        heatmap.set_title(title, fontdict={"fontsize": 8}, pad=12)
 
     def plot_box(self, df: pd.DataFrame, x_col: str, title: str) -> None:
         """Plot box chart of the column.
