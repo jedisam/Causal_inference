@@ -188,3 +188,22 @@
 06-30-2022 20:25:42 : INFO : logger : Successfully Instantiated Outlier Class Object
 06-30-2022 20:25:42 : INFO : logger : Successfully Instantiated Outlier Class Object
 06-30-2022 20:26:45 : INFO : logger : Missing value of the dataset calculated
+06-30-2022 22:41:08 : INFO : logger : Successfully Instantiated load_data Class Object
+06-30-2022 22:41:08 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:08 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:14 : INFO : logger : Successfully Instantiated load_data Class Object
+06-30-2022 22:41:14 : INFO : logger : Successfully Instantiated load_data Class Object
+06-30-2022 22:41:14 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:14 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:14 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated load_data Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated load_data Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated load_data Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated Model Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated Model Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated Model Class Object
+06-30-2022 22:41:36 : INFO : logger : Successfully Instantiated Model Class Object
