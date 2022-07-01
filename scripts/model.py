@@ -6,6 +6,9 @@ import numpy as np
 import pandas as pd
 from logger import Logger
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 class Model:
     def __init__(self):
@@ -46,4 +49,18 @@ class Model:
             scores[name] = model.score(X_test, y_test)
         return scores
 
-    # how many missing values exist or better still what is the % of missing values in the dataset?
+    def feature_importance(self, df, model) -> None:
+        """Plot the feature importance.
+
+        Args:
+            df (pd.DataFrame): dataframe to be preprocessed
+            model (str): model type
+
+        Returns:
+            None
+        """
+        # draw the feature importance of lr_model.coef_ using searborn
+        sns.set(style="whitegrid")
+        plt.figure(figsize=(10, 8))
+        sns.barplot(x=model.coef_[0], y=df.columns)
+        plt.savefig("feature_importance.png")
