@@ -135,3 +135,15 @@
 07-01-2022 21:10:14 : INFO : logger : Missing value of the dataset calculated
 07-01-2022 21:10:53 : INFO : logger : Successfully Instantiated Outlier Class Object
 07-01-2022 21:11:05 : INFO : logger : Plotting a plot_count
+07-01-2022 22:58:51 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-01-2022 22:59:09 : INFO : logger : Missing value of the dataset calculated
+07-01-2022 23:15:02 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-01-2022 23:15:07 : INFO : logger : Missing value of the dataset calculated
+07-01-2022 23:26:47 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-01-2022 23:26:55 : INFO : logger : Missing value of the dataset calculated
+07-01-2022 23:36:25 : INFO : logger : Successfully Instantiated load_data Class Object
+07-01-2022 23:36:25 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+07-01-2022 23:46:21 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-01-2022 23:46:25 : INFO : logger : Missing value of the dataset calculated
+07-02-2022 00:13:52 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-02-2022 00:13:55 : INFO : logger : Missing value of the dataset calculated
