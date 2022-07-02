@@ -12,7 +12,7 @@ import seaborn as sns
 
 class Model:
     def __init__(self):
-        """Initialize the PreProcess class.
+        """Initialize the Model class.
 
         Args:
             df (pd.DataFrame): dataframe to be preprocessed
