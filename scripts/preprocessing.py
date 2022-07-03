@@ -6,7 +6,8 @@ import pandas as pd
 import sys
 import os
 
-from logger import Logger
+# from logger import Logger
+
 
 from sklearn.preprocessing import LabelEncoder
 
@@ -22,10 +23,10 @@ class PreProcess:
         """
         try:
             self.df = df
-            self.logger = Logger("preprocessing.log").get_app_logger()
-            self.logger.info("Successfully Instantiated Outlier Class Object")
+            # self.logger = Logger("preprocessing.log").get_app_logger()
+            # self.logger.info("Successfully Instantiated Outlier Class Object")
         except Exception:
-            self.logger.exception("Failed to Instantiate Preprocessing Class Object")
+            # self.logger.exception("Failed to Instantiate Preprocessing Class Object")
             sys.exit(1)
 
     def convert_to_datetime(self, df, column: str):
@@ -48,7 +49,7 @@ class PreProcess:
             column (str): Column to be converted to string
         """
         self.df[column] = df[column].astype(float)
-        self.logger.info("Successfully converted to float columns")
+        # self.logger.info("Successfully converted to float columns")
         return self.df
 
     def drop_variables(self, df):
@@ -62,7 +63,7 @@ class PreProcess:
         df = df[df.columns[df.isnull().mean() < 0.3]]
         missing_cols = df.columns[df.isnull().mean() > 0]
         print(missing_cols)
-        self.logger.info("Missing columns are: ", missing_cols)
+        # self.logger.info("Missing columns are: ", missing_cols)
         return df, df_before_filling, missing_cols
 
     def df_drop_columns(self, df) -> pd.DataFrame:
@@ -76,7 +77,7 @@ class PreProcess:
             df (pd.DataFrame): A dataframe with dropped columns
         """
         missing_cols = df.columns[df.isnull().mean() > 0]
-        self.logger.info(f"Missing columns are: {missing_cols}")
+        # self.logger.info(f"Missing columns are: {missing_cols}")
         df = df.drop(missing_cols, axis=1)
         return df
 
@@ -89,9 +90,9 @@ class PreProcess:
         Returns:
             df (DataFrame): A dataframe with dropped column
         """
-        self.logger.info(f"Dropping column: {column}")
+        # self.logger.info(f"Dropping column: {column}")
         df = df.drop(column, axis=1)
-        self.logger.info(f"Dropped column: {column}")
+        # self.logger.info(f"Dropped column: {column}")
         return df
 
     def label_encode(self, df: pd.DataFrame, columns: list) -> pd.DataFrame:
@@ -130,7 +131,7 @@ class PreProcess:
             df (pd.DataFrame): dataframe to be preprocessed
         """
         df.columns = [column.replace(" ", "_").lower() for column in df.columns]
-        self.logger.info("Cleaned feature names")
+        # self.logger.info("Cleaned feature names")
         return df
 
     def rename_columns(self, df: pd.DataFrame, column: str, new_column: str):
@@ -179,7 +180,7 @@ class PreProcess:
         df_cols = df_single.columns
         print(cat_cols)
         print(df_single.loc[:, cat_cols].mode().iloc[0])
-        self.logger.info("Filled missing categorical variables with mode")
+        # self.logger.info("Filled missing categorical variables with mode")
         return df_cols, df_single, cat_cols
 
     def drop_duplicates(self, df):
@@ -209,7 +210,7 @@ class PreProcess:
         )
         to_drop = [column for column in upper.columns if any(upper[column] > threshold)]
         df = df.drop(to_drop, axis=1)
-        self.logger.info("Selected correlated variables")
+        # self.logger.info("Selected correlated variables")
         return df
 
     def replace_outliers_iqr(self, df, columns):
@@ -227,5 +228,5 @@ class PreProcess:
             return df
         except Exception:
             # self.logger.exception(
-            #     'Failed to Replace Outlier Data with IQR')
+            # #     'Failed to Replace Outlier Data with IQR')
             sys.exit(1)
