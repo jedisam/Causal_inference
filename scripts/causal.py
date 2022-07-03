@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from causalnex.plots import EDGE_STYLE, NODE_STYLE, plot_structure
+from causalnex.discretiser import Discretiser
 from IPython.display import Image
 from logger import Logger
 
@@ -60,3 +61,20 @@ class Causal:
             all_edge_attributes=EDGE_STYLE.WEAK,
         )
         return Image(viz.draw(format="png"))
+
+    def discretise(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Discretise the data.
+
+        Args:
+            df (pd.DataFrame): A dataframe to be discretised
+
+        Returns:
+            pd.DataFrame: Discretised data
+        """
+        self.logger.info("Discretising Data")
+        for column in df.columns:
+            df[column] = Discretiser(
+                method="uniform", num_buckets=10, numeric_split_points=[1, 10]
+            ).transform(df[column].values)
+        self.logger.info("Discretised Data")
+        return df
