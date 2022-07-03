@@ -3,7 +3,8 @@ import pandas as pd
 from IPython.display import Image
 from causalnex.plots import plot_structure, NODE_STYLE, EDGE_STYLE
 from causalnex.structure.notears import from_pandas
-from logs import log
+
+# from logs import log
 import os, sys
 
 sys.path.insert(
@@ -14,21 +15,7 @@ from causal import Causal
 causal = Causal()
 
 
-data = pd.read_csv("../data/data_clean.csv")
 
-sel_feat = data[
-    [
-        "diagnosis",
-        "concave points_mean",
-        "radius_worst",
-        "concave points_worst",
-        "perimeter_worst",
-        "area_mean",
-        "area_worst",
-        "perimeter_mean",
-        "radius_mean",
-    ]
-]
 
 
 def get_causal_model(data):
@@ -41,11 +28,28 @@ def get_causal_model(data):
     Returns:
         _type_: _description_
     """
-    sample_80 = sel_feat.sample(frac=0.5, random_state=42)
-    sm_80 = from_pandas(sample_80, tabu_parent_nodes=["diagnosis"])
-    return sm_80
+    sample_50 = data.sample(frac=0.5, random_state=42)
+    sm_50 = from_pandas(sample_50, tabu_parent_nodes=["diagnosis"])
+    return sm_50
 
 
 if __name__ == "__main__":
-    sm_80 = get_causal_model(data)
-    causal.plot_structure_model(sm_80, threshold=0)
+    data = pd.read_csv("./data/data_clean.csv")
+
+    sel_feat = data[
+        [
+            "diagnosis",
+            "concave points_mean",
+            "radius_worst",
+            "concave points_worst",
+            "perimeter_worst",
+            "area_mean",
+            "area_worst",
+            "perimeter_mean",
+            "radius_mean",
+        ]
+    ]
+    sample_50 = sel_feat.sample(frac=0.5, random_state=42)
+    sm_50 = from_pandas(sample_50, tabu_parent_nodes=['diagnosis'])
+    # sm_50 = get_causal_model(sel_feat)
+    causal.plot_structure_model(sm_50, threshold=0.2)
