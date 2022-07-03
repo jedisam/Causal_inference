@@ -4,6 +4,7 @@ import sys
 import unittest
 
 import pandas as pd
+import numpy as np
 
 
 sys.path.insert(
@@ -76,10 +77,11 @@ class TESTPHARMASALES(unittest.TestCase):
 
         # tweet_df = self.df.get_tweet_df()
 
-    def test_drop_duplicate(self):
+    def test_drop_column(self):
         """Test convert to datetime module."""
-        df = PreProcess(self.df).drop_duplicate(self.df)
-        assert df.shape[0] == 1
+        inital_cols = len(self.df.columns)
+        df = PreProcess(self.df).drop_column(self.df, 'radius_mean')
+        assert len(df.columns) == inital_cols - 1
 
 
 if __name__ == "__main__":
