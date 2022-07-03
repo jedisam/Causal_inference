@@ -3,17 +3,14 @@ import os
 import sys
 import unittest
 
-import numpy
 import pandas as pd
 
-# from clean_tweets_dataframe import Clean_Tweets
-from pandas._libs.tslibs.timestamps import Timestamp
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../scripts"))
 )
 
-from preprocess import Preprocess
+from preprocessing import Preprocess
 
 
 class TESTPHARMASALES(unittest.TestCase):
