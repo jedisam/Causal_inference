@@ -14,4 +14,5 @@ pandas==1.4.2
 pandas-profiling==3.2.0
 pandocfilters==1.5.0
 pydot==1.4.2
+pygraphviz
 pytest==7.1.2
