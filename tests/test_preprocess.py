@@ -78,7 +78,7 @@ class TESTPHARMASALES(unittest.TestCase):
 
     def test_drop_duplicate(self):
         """Test convert to datetime module."""
-        df = Preprocess(self.df).drop_duplicate(self.df)
+        df = PreProcess(self.df).drop_duplicate(self.df)
         assert df.shape[0] == 1
 
 
