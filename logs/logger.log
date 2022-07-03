@@ -287,3 +287,101 @@
 07-02-2022 00:13:52 : INFO : logger : Successfully Instantiated Outlier Class Object
 07-02-2022 00:13:52 : INFO : logger : Successfully Instantiated Outlier Class Object
 07-02-2022 00:13:55 : INFO : logger : Missing value of the dataset calculated
+07-02-2022 07:33:51 : INFO : logger : Successfully Instantiated load_data Class Object
+07-02-2022 07:33:51 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+07-02-2022 07:34:03 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-02-2022 07:34:03 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-02-2022 07:34:10 : INFO : logger : Missing value of the dataset calculated
+07-02-2022 08:03:44 : INFO : logger : Successfully Instantiated load_data Class Object
+07-02-2022 08:03:44 : INFO : logger : Successfully Instantiated load_data Class Object
+07-02-2022 08:03:44 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+07-02-2022 08:03:44 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+07-02-2022 08:03:44 : INFO : logger : Successfully Instantiated Causal Class Object
+07-02-2022 08:03:44 : INFO : logger : Successfully Instantiated Causal Class Object
+07-02-2022 08:20:06 : INFO : logger : Missing value of the dataset calculated
+07-02-2022 08:20:06 : INFO : logger : Missing value of the dataset calculated
+07-02-2022 08:44:27 : INFO : logger : Plotting Structure of Model
+07-02-2022 08:44:27 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:01:32 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:01:32 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:01:54 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:01:54 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:04:52 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:04:52 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:07:21 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:07:21 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:09:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:09:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:09:26 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:09:26 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:09:47 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:09:47 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:10:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:10:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:01 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:01 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:14 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:14 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:20 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:20 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:27 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:27 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:37 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:37 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:43 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:43 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:53 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:21:53 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:32:55 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:32:55 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:33:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:33:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:38:51 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:38:51 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:38:55 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:38:55 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:08 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:08 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:17 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:17 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:22 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:22 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:29 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:29 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:34 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:39:34 : INFO : logger : Plotting Structure of Model
+07-02-2022 09:40:43 : INFO : logger : Calculating Jaccard Similarity
+07-02-2022 09:40:43 : INFO : logger : Calculating Jaccard Similarity
+07-02-2022 09:40:43 : INFO : logger : calculated Jaccard Similarity
+07-02-2022 09:40:43 : INFO : logger : calculated Jaccard Similarity
+07-02-2022 10:03:48 : INFO : logger : Plotting Structure of Model
+07-02-2022 10:03:48 : INFO : logger : Plotting Structure of Model
+07-02-2022 10:04:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 10:04:02 : INFO : logger : Plotting Structure of Model
+07-02-2022 10:04:11 : INFO : logger : Plotting Structure of Model
+07-02-2022 10:04:11 : INFO : logger : Plotting Structure of Model
+07-02-2022 20:55:44 : INFO : logger : Successfully Instantiated load_data Class Object
+07-02-2022 20:55:44 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+07-02-2022 20:55:44 : INFO : logger : Successfully Instantiated Causal Class Object
+07-02-2022 20:55:49 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-02-2022 20:55:49 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-02-2022 20:55:54 : INFO : logger : Missing value of the dataset calculated
+07-02-2022 21:29:13 : INFO : logger : Plotting Structure of Model
+07-02-2022 21:29:39 : INFO : logger : Plotting Structure of Model
+07-02-2022 21:33:02 : INFO : logger : Successfully Instantiated load_data Class Object
+07-02-2022 21:33:02 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+07-02-2022 21:33:02 : INFO : logger : Successfully Instantiated Causal Class Object
+07-02-2022 21:33:06 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-02-2022 21:33:06 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-03-2022 08:05:56 : INFO : logger : Successfully Instantiated load_data Class Object
+07-03-2022 08:05:56 : INFO : logger : Successfully Instantiated Preprocessing Class Object
+07-03-2022 08:05:56 : INFO : logger : Successfully Instantiated Causal Class Object
+07-03-2022 08:06:02 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-03-2022 08:06:02 : INFO : logger : Successfully Instantiated Outlier Class Object
+07-03-2022 08:06:10 : INFO : logger : Missing value of the dataset calculated
+07-03-2022 08:36:48 : INFO : logger : Discretising Data
+07-03-2022 08:36:48 : INFO : logger : Discretised Data
+07-03-2022 08:37:07 : INFO : logger : Discretising Data
+07-03-2022 08:37:08 : INFO : logger : Discretised Data
