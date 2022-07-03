@@ -18,6 +18,8 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: Generate Graph
         run: |
+          sudo apt install graphviz
+          sudo apt-get install libgraphviz-dev
           # Your ML workflow goes here
           pip install -r requirements.txt
           python caus/caus.py
