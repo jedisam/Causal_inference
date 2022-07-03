@@ -24,6 +24,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
           pip install pandas
+          pip install numpy
+          pip install sklearn
           # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
